@@ -1,0 +1,349 @@
+.App {
+  padding: 2rem 0;
+}
+
+.post {
+  position: fixed;
+  border: 1px solid #f5fbfd;
+  width: 500px;
+  margin: 0 auto;
+  background-color: white;
+
+  &_container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+
+  &_button {
+    font-size: 2rem;
+    padding: 2rem;
+    position: fixed;
+    top: 40px;
+    right: 10px;
+    color: #1e70bf;
+    background-color: white;
+    font-weight: bold;
+    border: 1px solid white;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  &_header {
+    width: 100%;
+    height: 33px;
+    background-color: #f6f7f9;
+    border-bottom: 1px solid #dddfe2;
+    border-radius: 2px 2px 0 0;
+    display: flex;
+
+    a {
+      line-height: 33px;
+      font-weight: bold;
+      color: #365899;
+      font-size: 1.4rem;
+      padding: 0 3px 0 3px;
+
+      &:first-of-type {
+        color: #4b4f56;
+      }
+
+      i {
+        height: 1.4rem;
+        padding: 0.5rem;
+        color: #4b4f56;
+      }
+    }
+
+    p {
+      margin: 3px 5px 0 auto;
+      padding: 3px 7px;
+      border-radius: 50%;
+      font-size: 1.8rem;
+      color: #d0d3d8;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &_imgtxt {
+    display: flex;
+    padding: 1rem;
+    flex-wrap: wrap;
+
+    &-img {
+      // border: 1px solid forestgreen;
+      font-size: 3rem;
+    }
+
+    &-txt {
+      flex: 1;
+      // border: 5px solid firebrick;
+    }
+
+    min-height: 10px;
+
+    textarea {
+      display: inline-block;
+      background-color: #fff;
+      width: 100%;
+      border: none;
+      padding: 1rem;
+      resize: none;
+      // border: 1px solid red;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  &_gif {
+    width: 100%;
+
+    img {
+      display: inline-block;
+      width: 100%;
+      max-height: 300px;
+    }
+  }
+
+  &_tags {
+    // border: 1px solid rebeccapurple;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 1rem;
+
+    & > * {
+      flex-basis: calc(50% - 2rem);
+    }
+    .tag {
+      text-indent: 5px;
+      margin-top: 6px;
+      margin-right: 1rem;
+      line-height: 32px;
+      display: inline-block;
+      height: 32px;
+      border-radius: 50px;
+      background-color: #f6f7f9;
+      padding: 0px 6px 0px 3px;
+      transition: all 0s ease-in-out;
+
+      &:hover {
+        background-color: #dddfe2;
+      }
+
+      a {
+        color: #333;
+        font-weight: bold;
+        font-size: 1.3rem;
+        display: flex;
+        align-items: center;
+
+        i {
+          padding: 5px;
+          font-size: 1.5rem;
+        }
+      }
+
+      &--gif {
+        position: relative;
+      }
+    }
+  }
+
+  &_footer {
+    display: flex;
+    justify-content: flex-end;
+    background-color: #f6f7f9;
+
+    button {
+      font-size: 1.4rem;
+      margin-right: 1rem;
+      padding: 0.8rem 1rem;
+      background-color: white;
+      border: 1px solid white;
+
+      &.submit {
+        background-color: #5a20e8;
+        color: white;
+      }
+    }
+  }
+}
+
+// ------------------------ Giphy Box -------------------- //
+
+.gif {
+  background-color: white;
+  position: absolute;
+  top: 130%;
+  left: 10px;
+  height: 300px;
+  width: 250px;
+  border: 1px solid gray;
+  overflow-y: auto;
+  overflow-x: hidden;
+  visibility: hidden;
+  display: none;
+  padding: 1rem 0;
+
+  &--active {
+    visibility: visible;
+    display: block;
+  }
+}
+
+// ------------------------------ Post Styles -------------------- //
+
+.frame__container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 40%;
+  border: 1px solid #ced0d4;
+  border-radius: 5px;
+  background-color: #fff;
+  box-sizing: border-box;
+  margin-bottom: 3rem;
+}
+
+.frame__column {
+  display: flex;
+  flex-direction: column;
+}
+
+.frame__headline {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 12px 12px 0;
+  margin-bottom: 11px;
+}
+
+.headline__image {
+  height: 40px;
+  width: 40px;
+  margin-right: 8px;
+}
+
+.headline__subtitle {
+  color: #90949c;
+  font-size: 12px;
+  letter-spacing: -0.24px;
+  line-height: 16.08px;
+  margin: 0;
+}
+
+.headline__title {
+  color: #365899;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: -0.24px;
+  line-height: 19.32px;
+  word-wrap: break-word;
+  margin: 0 0 2px;
+}
+
+.headline__world {
+  height: 12px;
+  width: 12px;
+}
+
+.frame__content {
+  margin: 7px 12px;
+
+  img {
+    display: inline-block;
+    width: 100%;
+    max-height: 400px;
+  }
+}
+
+.frame__text {
+  margin: 0;
+}
+
+.frame__text--large {
+  margin: 0;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.frame__text--small {
+  margin: 0;
+  font-size: 14px;
+  line-height: 19.32px;
+}
+
+.frame__footer {
+  display: flex;
+  border-top: 1px solid #e1e2e3;
+  padding: 4px 12px;
+}
+
+.text__social {
+  color: #7f7f7f;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 14px;
+  margin: 0;
+}
+
+.footer__likes,
+.footer__comments,
+.footer__share,
+.footer__post-as {
+  display: flex;
+  padding: 4px 0 4px;
+  margin-right: 20px;
+  align-items: center;
+
+  i {
+    margin-right: 5px;
+  }
+}
+
+.footer__post-as-image {
+  height: 16px;
+}
+
+.footer__post-as {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+// ------------------------------ Trending --------------------
+
+.pakageTrending {
+  position: relative;
+
+  h2 {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    color: white;
+    // border: 5px solid gold;
+  }
+}
+
+// -------------- gify search ----------
+
+.gify_search {
+  padding: 1rem 0.5rem;
+  input {
+    display: block;
+    padding: 1rem;
+    border: 1px solid gray;
+    border-radius: 5px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
